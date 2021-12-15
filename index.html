@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
 		<meta charset="utf-8">
         <meta name = "viewport"
             content = "width=device-width, user-scalable = no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -8,47 +9,25 @@
 		<title>Karamuczing is bambuczing!</title>
 		<style>
 			body { margin: 0; }
+			div {
+				width: 300px;
+				height: 300px;
+				background-color: none;
+				border-style: dotted;
+
+				position: absolute;
+				top:0;
+				bottom: 0;
+				left: 0;
+				right: 0; 
+				
+				margin: auto;
+			}
 		</style>
 	</head>
 	<body>
-		<script type="module" src="/js/three.js">
-		import * as THREE from '/js/three.js'
-		import { OrbitControls } from '/js/OrbitControls.js'
-		import { GLTFLoader } from "/js/GLTFLoader.js";
-
-		let scene, camera, renderer;
-
-		function init() {
-			scene = new THREE.Scene();
-			scene.background = new THREE.Color('grey');
-			camera = new THREE.PerspectiveCamera(40, window.innerWidth
-				/window.innerHeight, 1, 5000);
-			camera.rotation.y = 45/100*Math.PI;
-			camera.position.x = 800; 
-			camera.position.y = 100;
-
-			let hlight = new THREE.AmbientLight (0x404040,100);
-			scene.add(hlight);
-
-			directionalLight = new THREE.DirectionalLight(0xffffff,100);
-
-			renderer = new THREE.WebGLRenderer({antialias:true});
-			renderer.setSize(window.innerWidth,window.innerHeight);
-			document.body.appendChild(renderer.domElement);
-			
-			let loader = new THREE.GLTFLoader();
-			loader.load('./js/win/scene.gltf', function(gltf){
-				win = gltf.scene.children[0];
-				win.scale.set(0.5,0.5,0.5);
-				scene.add(gltf.scene);
-				renderer.render(scene,camera);
-			});
-		
-		}
-
-		
-		init();
-
-		</script>		
+		<div id='amarena'>
+		</div>
+		<script src="/js/index.js" type="module"></script>
 	</body>
 </html>
