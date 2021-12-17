@@ -1,13 +1,13 @@
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
-import { OrbitControls } from 'https://unpkg.com/three@0.119.1/examples/jsm/controls/OrbitControls.js';
-import * as GLTFLoader  from 'https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js';
+//import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+//import { OrbitControls } from 'https://unpkg.com/three@0.119.1/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.116.1/examples/jsm/loaders/GLTFLoader.js';
 	
 	let scene, camera, renderer;
 	var container,w,h;
-
+	console.log('elo');
 	function init() {
 		container = document.getElementById("amarena")
-		//console.log(container)
+		console.log('elo2')
 		w=container.offsetWidth
 		h=container.offsetHeight
 
@@ -23,19 +23,21 @@ import * as GLTFLoader  from 'https://cdn.rawgit.com/mrdoob/three.js/master/exam
 				scene.add(hlight);
 	
 				let directionalLight = new THREE.DirectionalLight(0xffffff,100);
+				scene.add(directionalLight)
 	
 				renderer = new THREE.WebGLRenderer({antialias:true});
 				renderer.setSize(w,h);
 				container.appendChild(renderer.domElement);
-				
-				let loader = new THREE.GLTFLoader();
-				loader.load('./js/win/scene.gltf', function(gltf){
-					win = gltf.scene.children[0];
+
+				var loader = new GLTFLoader()
+				loader.load('./win/scene.gltf', function(gltf){
+					var win = gltf.scene.children[0];
 					win.scale.set(0.5,0.5,0.5);
 					scene.add(gltf.scene);
 					renderer.render(scene,camera);
+console.log('elo 3');
 				});
-			
-			}
+					
+	}
             
 init();
