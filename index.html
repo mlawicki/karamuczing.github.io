@@ -8,10 +8,10 @@
 		<title>Karamuczing is bambuczing!</title>
 		<style>
 			body { margin: 0; }
-			div {
-				/* width: 500px;
-				height: 500px;
-				background-color: none;
+			canvas {
+				 width: 400px;
+				height: 400px;
+				background-color: gray;
 				border-style: dotted;
 
 				position: absolute;
@@ -20,22 +20,26 @@
 				left: 0;
 				right: 0; 
 				
-				margin: auto; */
+				margin: 100px 100px 100px 100px; 
 				width: 100%; height: 100%;
 				position: absolute; top: 0; left: 0;
 			}
 		</style>
 	</head>
 	<body>
-		<div id='amarena'>
-		</div>
+		<canvas class="karamuczo"></canvas>
+		
+		<babylon model="win/scene.gltf" templates.main.params.fill-screen="true">
+			<!-- reposition camera's initial state -->
+			<camera alpha="-0.5" beta="0.8" radius="90" minZ="0.1">
+				<!-- cancel bouncing -->
+				<behaviors bouncing="false">
+					<!-- make auto-rotate faster -->
+					<auto-rotate idle-rotation-speed="1.5"></auto-rotate>
+				</behaviors>
+			</camera>
+		</babylon>
+		<script src="https://preview.babylonjs.com/viewer/babylon.viewer.js"></script>
 
-		<script src="https://threejs.org/build/three.js" ></script> 
-		<script src="https://rawcdn.githack.com/mrdoob/three.js/r115/examples/js/loaders/GLTFLoader.js" type="module"></script>
-		<script src="https://rawcdn.githack.com/mrdoob/three.js/r115/examples/js/controls/OrbitControls.js"></script>
-		<script  type="module" src="/js/index.js"></script>
-			
-		
-		
 	</body>
 </html>
