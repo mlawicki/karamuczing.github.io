@@ -31,7 +31,7 @@
 		
 		<babylon model="win/scene.gltf" templates.main.params.fill-screen="true">
 			<!-- reposition camera's initial state -->
-			<camera alpha="-0.5" beta="0.8" radius="90" minZ="0.1">
+			<camera alpha="-0.5" beta="0.8" radius="190" minZ="0.1">
 				<!-- cancel bouncing -->
 				<behaviors bouncing="false">
 					<!-- make auto-rotate faster -->
@@ -40,6 +40,9 @@
 			</camera>
 		</babylon>
 		<script src="https://preview.babylonjs.com/viewer/babylon.viewer.js"></script>
+		<script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.22.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.4.0"></script>
+		<midi-player src="win/500miles.mid" sound-font id="midiplayer" onload="midiplayer.start();" onloadeddata="midiplayer.seekTo(12)">
+		</midi-player>
 
 	</body>
 </html>
