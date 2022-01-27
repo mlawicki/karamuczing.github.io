@@ -11,11 +11,9 @@
 		<canvas class="karamuczo"></canvas>
 		
 		<babylon model="win/scene.gltf" templates.main.params.fill-screen="true">
-			<!-- reposition camera's initial state -->
 			<camera alpha="-1" beta="2" radius="50" minZ="0.1">
 				<!-- cancel bouncing -->
-				<behaviors bouncing="false">
-					<!-- make auto-rotate faster -->
+				<behaviors bouncing="true" framingbehavior="true">
 					<auto-rotate idle-rotation-speed="1.5"></auto-rotate>
 				</behaviors>
 			</camera>
@@ -24,6 +22,7 @@
 		<script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.22.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.4.0"></script>
 		<midi-player src="win/500miles.mid" sound-font id="midiplayer" onload="midiplayer.start(12);" onloadeddata="midiplayer.start()">
 		</midi-player>
+		<script async src="data.js"></script>
 
 	</body>
 </html>
