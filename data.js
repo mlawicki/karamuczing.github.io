@@ -7,8 +7,10 @@ var przyslowia = ["Pij karamucza bądź bambucza",
              "Karamuczing is bambuczing!",
              "Czy karamucz, czy to keler, zaraz szybko go wychleję!"]
 
+var przyslowiownik = document.getElementById("tekstPrzyslowia")
+przyslowiownik.innerHTML += rand(przyslowia)
+document.title = rand(przyslowia)
+
 function rand(items) {
     return items[items.length * Math.random() | 0];
 }
-
-document.title = rand(przyslowia)
